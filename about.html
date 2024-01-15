@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam Dsouza - Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link> -->
+    <link href="styles.css" rel="stylesheet" />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("dna.jpg") no-repeat center center fixed;
+        background-size: cover;
+        filter: blur(2px); /* Adjust the blur intensity */
+        z-index: -1;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .top-right {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        z-index: 3;
+      }
+      .rectangle-box {
+        border-radius: 30px;
+        position: relative;
+        margin-top: 7.5%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%; /* Adjust the width as needed */
+        padding: 20px;
+        text-align: center;
+        z-index: 3;
+        background-color: #f2f7da;
+        opacity: 0.8;
+      }
+
+      .rectangle-box2 {
+        position: relative;
+        margin-top: 4%;
+        margin-left: auto;
+        margin-right: auto;
+        /* width: 100%; */
+        min-width: 700px; /* Ensure minimum width to fit two images */
+        padding: 20px;
+        text-align: center;
+        z-index: 3;
+        background-color: none;
+        background: #0d0c24;
+        opacity: 1;
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap as needed */
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .rectangle-box3 {
+        background-color: none;
+        display: flex;
+        position: relative;
+      }
+
+      .rectangle-box2 img {
+        opacity: 1;
+      }
+
+      .image-row {
+        display: flex; /* Use Flexbox to align images in a row */
+        left: 5px;
+        gap: 20px; 
+        padding-left: 20px;
+      }
+      p {
+        color: black;
+        font-family: "notes";
+        font-size: 60px;
+      }
+
+      h1 {
+        font-family: "notes";
+      }
+
+      a {
+        font-family: "header";
+        font-size: 30px;
+        padding: 5px;
+        letter-spacing: 2px;
+      }
+      /* Other styles */
+    </style>
+  </head>
+  <body>
+    <div class="top-right">
+      <div class="flex space-x-10">
+        <a class="text-white hover:text-white" href="main.html"><strong>Home</strong></a>
+        <a class="text-white hover:text-white" href="resume.html"><strong>Resume</strong></a>
+        <a class="text-white hover:text-white" href="#"><strong>About</strong></a>
+      </div>
+    </div>
+    <div class="rectangle-box">
+      <h1 class="text-5xl text-center text-indigo-900">
+        <u>ABOUT ME</u>
+      </h1>
+      <p class="text-xl">
+        <br /><br />
+        Adam Dsouza was born in Hyderabad, India, and is a Computer Science graduate from Arizona State University. Growing up, Adam enjoyed
+        participating in a diverse range of activities, ranging from sports to dabbling in the arts. He enjoyed taking part in competitions across
+        multiple fields and excelling at what he did. Being an avid reader from a young age, Adam grew to enjoy gaining new knowledge and finding ways
+        to apply what he learned in the real world.
+        <br /><br />
+        Being a very sociable and curious person, Adam enjoyed meeting new people from diverse backgrounds, and from places around the world. This
+        desire to expand his knowledge of the world and acquire novel viewpoints prompted him to pursue the option of studying overseas. His decision
+        to pursue Computer Science was backed by his interest in problem-solving and finding unique ways to improvise. Working in a team environment
+        with other individuals helped mold his personality and take charge of situations when faced with a problem.
+        <br /><br />
+        Apart from his interests in coding, sketching, and reading, Adam also enjoys playing sports and spending time in nature. He enjoys working
+        just as hard as he does taking time off, but is dedicated to putting in as much effort as necessary to achieve his goals. His future goals are
+        to graduate with a Master's degree in Marketing and have multiple successful startups by the age of 40. While his goals may seem lofty, he
+        knows the work that he will need to put in to make his dreams a reality will require him to never give up and keep pushing forward regardless
+        of the circumstances.
+        <br /><br />
+      </p>
+    </div>
+    <div class="rectangle-box2">
+        <div class = "rectangle-box3">
+      <div class="image-row">
+        <img alt="Adam Dsouza" class="shadow-lg card-hover" src="cricket.jpg" width="400" height="250" />
+        <img alt="Adam Dsouza" class="shadow-lg card-hover" src="mountain.jpg" width="400" height="250" />
+      </div>
+      <div class="image-row">
+        <img alt="Adam Dsouza" class="shadow-lg card-hover" src="plane.jpg" width="400" height="250" />
+        <img alt="Adam Dsouza" class="shadow-lg card-hover" src="zion.jpg" width="400" height="250" />
+      </div>
+    </div>
+    </div>
+    <div class="content">
+      <!-- Your page content goes here -->
+    </div>
+  </body>
+</html>

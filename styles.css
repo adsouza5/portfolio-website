@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'notes';
+    src: url('styles/notes.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'header';
+    src: url('styles/header.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
