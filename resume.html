@@ -9,7 +9,7 @@
   <link href="styles.css" rel="stylesheet" />
   <style>
     .dynamic-bg{
-      background: linear-gradient(-45deg, #d7e29a, #8595d8);
+      background: #000;
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
     }
@@ -43,13 +43,13 @@
       
     }
     .centered img {
-      width: auto;
-      height: 80vh;
-      object-fit: contain;
-      border: 10px solid grey;
-      box-shadow: 0px 0px 10px #888888;
-      transition: transform 0.25s ease;
-    }
+  width: auto;
+  height: 80vh;
+  object-fit: contain;
+  border: 10px solid grey;
+  box-shadow: 0 0 10px #888888, 0 0 200px #4f0b55; /* Adjusted purple glow */
+  /* transition: transform 0.25s ease; */
+}
     .modal {
       position: fixed;
       top: 0; /* Position modal at the top of the page */
@@ -97,9 +97,9 @@
 <body class="dynamic-bg">
   <div class="top-right">
     <div class="flex space-x-10">
-      <a class="text-gray-700 hover:text-gray-900" href="index.html"><strong>Home</strong></a>
-      <a class="text-gray-700 hover:text-gray-900" href="resume.html"><strong>Resume</strong></a>
-      <a class="text-gray-700 hover:text-gray-900" href="about.html"><strong>About</strong></a>
+      <a class="text-white hover:text-gray-400" href="index.html"><strong>Home</strong></a>
+      <a class="text-white hover:text-gray-400" href="resume.html"><strong>Resume</strong></a>
+      <a class="text-white hover:text-gray-400" href="about.html"><strong>About</strong></a>
     </div>
   </div>
   <div class="centered">
