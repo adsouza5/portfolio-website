@@ -141,6 +141,45 @@
         visibility: visible;
         transform: translateY(0);
       }
+      #about {
+        padding-bottom: 100px; /* Extra padding for images */
+      }
+
+      /* Fixed height for the imageSlider */
+      #imageSlider {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        height: auto; /* Allow dynamic height based on content */
+        min-height: 300px; /* Ensure consistent layout even when hidden */
+        overflow: hidden;
+        margin-top: 20px;
+      }
+
+      /* Default state for images (hidden) */
+      #imageSlider img {
+        opacity: 0;
+        transform: translateY(
+          50px
+        ); /* Start slightly out of view */
+        transition: opacity 0.5s ease,
+          transform 0.5s ease;
+      }
+
+      /* Visible state for images */
+      #imageSlider img.visible {
+        opacity: 1;
+        transform: translateY(
+          0
+        ); /* Bring back into view */
+      }
+      #toggleText,
+      #toggleArrow {
+        transition: opacity 0.5s ease,
+          transform 0.5s ease;
+      }
     </style>
   </head>
   <body>
@@ -149,6 +188,7 @@
       <a href="#home">Home</a>
       <a href="#about">About Me</a>
       <a href="#resume">Resume</a>
+      <a href="#projects">Projects</a>
     </div>
 
     <!-- Home Section -->
@@ -216,73 +256,176 @@
     </section>
 
     <!-- About Section -->
-<section id="about" class="section bg-gray-900 text-white">
-  <h2 class="text-5xl text-center mb-8">
-    <u>About Me</u>
-  </h2>
-  <p class="max-w-3/4 mx-auto text-xl mb-6">
-    I’ve always been a curious and social person who loves meeting people from different backgrounds and learning about their perspectives. This curiosity about the world, combined with a desire to challenge myself, led me to study overseas. That experience not only broadened my worldview but also helped me grow personally and professionally. My interest in problem-solving naturally drew me to Computer Science. I’ve always enjoyed figuring out how things work and finding creative ways to make them better. Along the way, I discovered that development is as much about collaboration as it is about coding. Working with others has taught me how to listen, adapt, and step up when faced with challenges. As a developer, I’m driven by the opportunity to explore new ideas and technologies while working on projects that make a tangible impact. I see every new challenge as a chance to learn and grow, and I look forward to building meaningful solutions alongside others who share the same passion for creating something great.
-  </p>
-  <!-- Clickable text with arrow -->
-  <div id="showImages" class="text-center cursor-pointer">
-    <p class="text-white text-lg hover:text-gray-400">
-      Show Pictures <i class="fas fa-arrow-down"></i>
-    </p>
-  </div>
-  <div
-    id="imageSlider"
-    class="hidden flex flex-wrap justify-center gap-6 mt-10"
-  >
-    <img
-      src="cricket.jpg"
-      alt="Cricket"
-      class="shadow-lg rounded-lg opacity-0"
-      width="400"
-      height="250"
-    />
-    <img
-      src="mountain.jpg"
-      alt="Mountain"
-      class="shadow-lg rounded-lg opacity-0"
-      width="500"
-      height="250"
-    />
-    <img
-      src="plane.jpg"
-      alt="Plane"
-      class="shadow-lg rounded-lg opacity-0"
-      width="400"
-      height="250"
-    />
-    <img
-      src="zion.jpg"
-      alt="Zion"
-      class="shadow-lg rounded-lg opacity-0"
-      width="400"
-      height="250"
-    />
-  </div>
-</section>
-<script>
-  // Show images on text click with animation
-  const showImagesText = document.getElementById("showImages");
-  const imageSlider = document.getElementById("imageSlider");
-  const images = imageSlider.querySelectorAll("img");
+    <section
+      id="about"
+      class="section bg-gray-900 text-white"
+    >
+      <h2 class="text-5xl text-center mb-8">
+        <u>About Me</u>
+      </h2>
+      <p class="max-w-3/4 mx-auto text-xl mb-6">
+        I’ve always been a curious and social
+        person who loves meeting people from
+        different backgrounds and learning about
+        their perspectives. This curiosity about
+        the world, combined with a desire to
+        challenge myself, led me to study
+        overseas. That experience not only
+        broadened my worldview but also helped me
+        grow personally and professionally. My
+        interest in problem-solving naturally drew
+        me to Computer Science. I’ve always
+        enjoyed figuring out how things work and
+        finding creative ways to make them better.
+        Along the way, I discovered that
+        development is as much about collaboration
+        as it is about coding. Working with others
+        has taught me how to listen, adapt, and
+        step up when faced with challenges. As a
+        developer, I’m driven by the opportunity
+        to explore new ideas and technologies
+        while working on projects that make a
+        tangible impact. I see every new challenge
+        as a chance to learn and grow, and I look
+        forward to building meaningful solutions
+        alongside others who share the same
+        passion for creating something great.
+      </p>
+      <!-- Clickable text with dynamic arrow image -->
+      <div
+        id="showImages"
+        class="text-center cursor-pointer"
+      >
+        <p
+          id="toggleText"
+          class="text-white text-lg hover:text-gray-400"
+        >
+          Show Pictures
+        </p>
+        <img
+          id="toggleArrow"
+          src="arrow.png"
+          alt="Arrow Down"
+          class="mx-auto mt-2"
+          style="
+            width: 40px;
+            height: auto;
+            cursor: pointer;
+          "
+        />
+      </div>
+      <div
+        id="imageSlider"
+        class="hidden flex flex-wrap justify-center gap-6 mt-10"
+      >
+        <img
+          src="cricket.jpg"
+          alt="Cricket"
+          class="shadow-lg rounded-lg opacity-0"
+          width="400"
+          height="250"
+        />
+        <img
+          src="mountain.jpg"
+          alt="Mountain"
+          class="shadow-lg rounded-lg opacity-0"
+          width="500"
+          height="250"
+        />
+        <img
+          src="plane.jpg"
+          alt="Plane"
+          class="shadow-lg rounded-lg opacity-0"
+          width="400"
+          height="250"
+        />
+        <img
+          src="zion.jpg"
+          alt="Zion"
+          class="shadow-lg rounded-lg opacity-0"
+          width="400"
+          height="250"
+        />
+      </div>
+    </section>
 
-  showImagesText.addEventListener("click", () => {
-    if (imageSlider.classList.contains("hidden")) {
-      imageSlider.classList.remove("hidden");
-      images.forEach((image, index) => {
-        setTimeout(() => {
-          image.style.transition = "opacity 1s, transform 1s";
-          image.style.opacity = "1";
-          image.style.transform = "translateY(20px)";
-        }, index * 200); // Stagger the animation
-      });
-    }
-  });
-</script>
+    <script>
+      // Toggle images visibility with animation, text, and arrow image update
+      const showImagesTrigger =
+        document.getElementById("showImages");
+      const toggleText =
+        document.getElementById("toggleText");
+      const toggleArrow = document.getElementById(
+        "toggleArrow"
+      );
+      const images = document.querySelectorAll(
+        "#imageSlider img"
+      );
+      let imagesVisible = false; // Tracks visibility state
 
+      showImagesTrigger.addEventListener(
+        "click",
+        () => {
+          // Start fading out the text and arrow
+          toggleText.style.opacity = "0";
+          toggleText.style.transform =
+            "translateY(-10px)";
+          toggleArrow.style.opacity = "0";
+          toggleArrow.style.transform =
+            "translateY(-10px)";
+
+          setTimeout(() => {
+            // Switch text and arrow state after fade-out
+            if (!imagesVisible) {
+              toggleText.textContent =
+                "Hide Pictures";
+              toggleArrow.src =
+                "arrow_reverse.png"; // Change to upward arrow image
+
+              // Show images
+              images.forEach((image, index) => {
+                setTimeout(() => {
+                  image.classList.add("visible"); // Add the visible class
+                }, index * 100); // Stagger animation
+              });
+            } else {
+              toggleText.textContent =
+                "Show Pictures";
+              toggleArrow.src = "arrow.png"; // Change back to downward arrow image
+
+              // Hide images
+              images.forEach((image, index) => {
+                setTimeout(() => {
+                  image.classList.remove(
+                    "visible"
+                  ); // Remove the visible class
+                }, index * 100); // Stagger animation in reverse
+              });
+            }
+
+            // Fade in the updated text and arrow
+            toggleText.style.opacity = "1";
+            toggleText.style.transform =
+              "translateY(0)";
+            toggleArrow.style.opacity = "1";
+            toggleArrow.style.transform =
+              "translateY(0)";
+          }, 500); // Wait for fade-out to complete
+
+          imagesVisible = !imagesVisible; // Toggle visibility state
+        }
+      );
+
+      // Ensure all images start hidden
+      window.addEventListener(
+        "DOMContentLoaded",
+        () => {
+          images.forEach((image) => {
+            image.classList.remove("visible");
+          });
+        }
+      );
+    </script>
 
     <!-- Resume Section -->
     <section
@@ -299,6 +442,61 @@
         />
       </div>
     </section>
+
+    <!-- Projects Section -->
+<section id="projects" class="section text-center bg-gray-700 text-white">
+  <h2 class="text-5xl mb-8"><u>Projects</u></h2>
+  <div class="max-w-4xl mx-auto space-y-12">
+    <!-- Project 1 -->
+    <div>
+      <h3 class="text-3xl font-semibold mb-3">
+        Real-Time Code Collaboration Platform
+      </h3>
+      <p class="text-xl">
+        A collaborative coding tool built with
+        <strong>React, Node.js, WebRTC, Firebase, and Docker</strong> to
+        enable developers to code together in real time with syntax
+        highlighting, multi-user editing, and chat features.
+      </p>
+    </div>
+
+    <!-- Project 2 -->
+    <div>
+      <h3 class="text-3xl font-semibold mb-3">Etherea (Internship)</h3>
+      <p class="text-xl">
+        A cross-platform mobile application built using
+        <strong>React Native</strong>, designed to enhance user engagement.
+        Features include seamless Google login integration, real-time
+        Firestore support for up to 200,000 simultaneous connections, and
+        elegant UI components crafted from high-fidelity designs.
+      </p>
+    </div>
+
+    <!-- Project 3 -->
+    <div>
+      <h3 class="text-3xl font-semibold mb-3">
+        Augmented Reality Travel Guide (In Progress)
+      </h3>
+      <p class="text-xl">
+        An AR-based mobile application using
+        <strong>ARCore, ARKit, Kotlin, and Firebase</strong> to provide
+        interactive travel information and virtual experiences.
+      </p>
+    </div>
+
+    <!-- Project 4 -->
+    <div>
+      <h3 class="text-3xl font-semibold mb-3">
+        AI-Powered Personal Finance Assistant (In Progress)
+      </h3>
+      <p class="text-xl">
+        A finance management platform leveraging
+        <strong>machine learning</strong> to track spending, create budgets,
+        and provide personalized financial insights.
+      </p>
+    </div>
+  </div>
+</section>
 
     <script>
       // Dynamic background color change based on scroll position
@@ -325,6 +523,8 @@
         }
       );
 
+    
+      
       // Intersection Observer for fading in/out sections
       const sections =
         document.querySelectorAll(".section");
