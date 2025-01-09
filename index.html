@@ -216,115 +216,73 @@
     </section>
 
     <!-- About Section -->
-    <section
-      id="about"
-      class="section bg-gray-900 text-white"
-    >
-      <h2 class="text-5xl text-center mb-8">
-        <u>About Me</u>
-      </h2>
-      <p class="max-w-3/4 mx-auto text-xl mb-6">
-        I’ve always been a curious and social
-        person who loves meeting people from
-        different backgrounds and learning about
-        their perspectives. This curiosity about
-        the world, combined with a desire to
-        challenge myself, led me to study
-        overseas. That experience not only
-        broadened my worldview but also helped me
-        grow personally and professionally. My
-        interest in problem-solving naturally drew
-        me to Computer Science. I’ve always
-        enjoyed figuring out how things work and
-        finding creative ways to make them better.
-        Along the way, I discovered that
-        development is as much about collaboration
-        as it is about coding. Working with others
-        has taught me how to listen, adapt, and
-        step up when faced with challenges. As a
-        developer, I’m driven by the opportunity
-        to explore new ideas and technologies
-        while working on projects that make a
-        tangible impact. I see every new challenge
-        as a chance to learn and grow, and I look
-        forward to building meaningful solutions
-        alongside others who share the same
-        passion for creating something great.
-      </p>
-      <button
-        id="showImages"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Show Pictures
-      </button>
-      <div
-        id="imageSlider"
-        class="hidden flex flex-wrap justify-center gap-6 mt-10"
-      >
-        <img
-          src="cricket.jpg"
-          alt="Cricket"
-          class="shadow-lg rounded-lg opacity-0"
-          width="400"
-          height="250"
-        />
-        <img
-          src="mountain.jpg"
-          alt="Mountain"
-          class="shadow-lg rounded-lg opacity-0"
-          width="500"
-          height="250"
-        />
-        <img
-          src="plane.jpg"
-          alt="Plane"
-          class="shadow-lg rounded-lg opacity-0"
-          width="400"
-          height="250"
-        />
-        <img
-          src="zion.jpg"
-          alt="Zion"
-          class="shadow-lg rounded-lg opacity-0"
-          width="400"
-          height="250"
-        />
-      </div>
-    </section>
-    <script>
-      // Show images on button click with animation
-      const showImagesButton =
-        document.getElementById("showImages");
-      const imageSlider = document.getElementById(
-        "imageSlider"
-      );
-      const images =
-        imageSlider.querySelectorAll("img");
+<section id="about" class="section bg-gray-900 text-white">
+  <h2 class="text-5xl text-center mb-8">
+    <u>About Me</u>
+  </h2>
+  <p class="max-w-3/4 mx-auto text-xl mb-6">
+    I’ve always been a curious and social person who loves meeting people from different backgrounds and learning about their perspectives. This curiosity about the world, combined with a desire to challenge myself, led me to study overseas. That experience not only broadened my worldview but also helped me grow personally and professionally. My interest in problem-solving naturally drew me to Computer Science. I’ve always enjoyed figuring out how things work and finding creative ways to make them better. Along the way, I discovered that development is as much about collaboration as it is about coding. Working with others has taught me how to listen, adapt, and step up when faced with challenges. As a developer, I’m driven by the opportunity to explore new ideas and technologies while working on projects that make a tangible impact. I see every new challenge as a chance to learn and grow, and I look forward to building meaningful solutions alongside others who share the same passion for creating something great.
+  </p>
+  <!-- Clickable text with arrow -->
+  <div id="showImages" class="text-center cursor-pointer">
+    <p class="text-white text-lg hover:text-gray-400">
+      Show Pictures <i class="fas fa-arrow-down"></i>
+    </p>
+  </div>
+  <div
+    id="imageSlider"
+    class="hidden flex flex-wrap justify-center gap-6 mt-10"
+  >
+    <img
+      src="cricket.jpg"
+      alt="Cricket"
+      class="shadow-lg rounded-lg opacity-0"
+      width="400"
+      height="250"
+    />
+    <img
+      src="mountain.jpg"
+      alt="Mountain"
+      class="shadow-lg rounded-lg opacity-0"
+      width="500"
+      height="250"
+    />
+    <img
+      src="plane.jpg"
+      alt="Plane"
+      class="shadow-lg rounded-lg opacity-0"
+      width="400"
+      height="250"
+    />
+    <img
+      src="zion.jpg"
+      alt="Zion"
+      class="shadow-lg rounded-lg opacity-0"
+      width="400"
+      height="250"
+    />
+  </div>
+</section>
+<script>
+  // Show images on text click with animation
+  const showImagesText = document.getElementById("showImages");
+  const imageSlider = document.getElementById("imageSlider");
+  const images = imageSlider.querySelectorAll("img");
 
-      showImagesButton.addEventListener(
-        "click",
-        () => {
-          if (
-            imageSlider.classList.contains(
-              "hidden"
-            )
-          ) {
-            imageSlider.classList.remove(
-              "hidden"
-            );
-            images.forEach((image, index) => {
-              setTimeout(() => {
-                image.style.transition =
-                  "opacity 1s, transform 1s";
-                image.style.opacity = "1";
-                image.style.transform =
-                  "translateY(20px)";
-              }, index * 200); // Stagger the animation
-            });
-          }
-        }
-      );
-    </script>
+  showImagesText.addEventListener("click", () => {
+    if (imageSlider.classList.contains("hidden")) {
+      imageSlider.classList.remove("hidden");
+      images.forEach((image, index) => {
+        setTimeout(() => {
+          image.style.transition = "opacity 1s, transform 1s";
+          image.style.opacity = "1";
+          image.style.transform = "translateY(20px)";
+        }, index * 200); // Stagger the animation
+      });
+    }
+  });
+</script>
+
 
     <!-- Resume Section -->
     <section
