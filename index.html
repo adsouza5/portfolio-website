@@ -18,6 +18,35 @@
     />
     <link href="styles.css" rel="stylesheet" />
     <style>
+      /* Shared styles for carousels */
+      .carousel-container {
+        width: 100%;
+        max-width: 1200px; /* Increased width for larger images */
+        height: auto;
+        aspect-ratio: 16 / 9; /* Maintain standard aspect ratio */
+        position: relative;
+        overflow: hidden;
+      }
+
+      .carousel-container img {
+        width: auto;
+        height: 100%; /* Ensure the images take up the height of the container */
+        max-height: 110%; /* Ensure images don't overflow */
+        object-fit: contain; /* Ensures the image fits without cropping */
+        transition: opacity 0.5s ease,
+          transform 0.5s ease;
+      }
+
+      .carousel-container img.hidden {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      .etherea-carousel img {
+        width: auto;
+        height: 100px;
+        margin: auto;
+        display: block;
+      }
       /* Background gradient that changes from black/purple to black/red */
       body {
         font-family: "Roboto", sans-serif;
@@ -444,59 +473,267 @@
     </section>
 
     <!-- Projects Section -->
-<section id="projects" class="section text-center bg-gray-700 text-white">
-  <h2 class="text-5xl mb-8"><u>Projects</u></h2>
-  <div class="max-w-4xl mx-auto space-y-12">
-    <!-- Project 1 -->
-    <div>
-      <h3 class="text-3xl font-semibold mb-3">
-        Real-Time Code Collaboration Platform
-      </h3>
-      <p class="text-xl">
-        A collaborative coding tool built with
-        <strong>React, Node.js, WebRTC, Firebase, and Docker</strong> to
-        enable developers to code together in real time with syntax
-        highlighting, multi-user editing, and chat features.
-      </p>
-    </div>
+    <section
+      id="projects"
+      class="section text-center bg-gray-700 text-white"
+    >
+      <h2 class="text-5xl mb-8">
+        <u>Projects</u>
+      </h2>
+      <div class="max-w-4xl mx-auto space-y-12">
+        <!-- Project 1 -->
+        <div>
+          <h3 class="text-3xl font-semibold mb-3">
+            Real-Time Code Collaboration Platform
+          </h3>
+          <p class="text-xl">
+            A collaborative coding tool built with
+            <strong
+              >React, Node.js, WebRTC, Firebase,
+              and Docker</strong
+            >
+            to enable developers to code together
+            in real time with syntax highlighting,
+            multi-user editing, and chat features.
+          </p>
 
-    <!-- Project 2 -->
-    <div>
-      <h3 class="text-3xl font-semibold mb-3">Etherea (Internship)</h3>
-      <p class="text-xl">
-        A cross-platform mobile application built using
-        <strong>React Native</strong>, designed to enhance user engagement.
-        Features include seamless Google login integration, real-time
-        Firestore support for up to 200,000 simultaneous connections, and
-        elegant UI components crafted from high-fidelity designs.
-      </p>
-    </div>
+          <!-- Image Carousel -->
+          <div
+            class="relative mt-8 flex justify-center items-center"
+          >
+            <!-- Left Arrow -->
+            <button
+              id="prevBtnProject1"
+              class="absolute left-0 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-600 z-10"
+            >
+              &#8592;
+            </button>
 
-    <!-- Project 3 -->
-    <div>
-      <h3 class="text-3xl font-semibold mb-3">
-        Augmented Reality Travel Guide (In Progress)
-      </h3>
-      <p class="text-xl">
-        An AR-based mobile application using
-        <strong>ARCore, ARKit, Kotlin, and Firebase</strong> to provide
-        interactive travel information and virtual experiences.
-      </p>
-    </div>
+            <!-- Fixed Height Image Container -->
+            <div
+              class="carousel-container overflow-hidden w-full max-w-2xl h-96 relative flex items-center justify-center"
+            >
+              <img
+                id="project1Image1"
+                src="realTime1.png"
+                alt="Real-Time Coding Platform Screenshot 1"
+                class="absolute w-auto h-full max-h-full transition-transform duration-500 opacity-100"
+              />
+              <img
+                id="project1Image2"
+                src="realTime2.png"
+                alt="Real-Time Coding Platform Screenshot 2"
+                class="absolute w-auto h-full max-h-full transition-transform duration-500 opacity-0"
+              />
+            </div>
 
-    <!-- Project 4 -->
-    <div>
-      <h3 class="text-3xl font-semibold mb-3">
-        AI-Powered Personal Finance Assistant (In Progress)
-      </h3>
-      <p class="text-xl">
-        A finance management platform leveraging
-        <strong>machine learning</strong> to track spending, create budgets,
-        and provide personalized financial insights.
-      </p>
-    </div>
-  </div>
-</section>
+            <!-- Right Arrow -->
+            <button
+              id="nextBtnProject1"
+              class="absolute right-0 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-600 z-10"
+            >
+              &#8594;
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div>
+          <h3 class="text-3xl font-semibold mb-3">
+            Etherea (Internship)
+          </h3>
+          <p class="text-xl">
+            A cross-platform mobile application
+            built using
+            <strong>React Native</strong>,
+            designed to enhance user engagement.
+            Features include seamless Google login
+            integration, real-time Firestore
+            support for up to 200,000 simultaneous
+            connections, and elegant UI components
+            crafted from high-fidelity designs.
+          </p>
+
+          <!-- Image Carousel -->
+          <div
+            class="relative mt-8 flex justify-center items-center"
+          >
+            <!-- Left Arrow -->
+            <button
+              id="prevBtnEtherea"
+              class="absolute left-0 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-600 z-10"
+            >
+              &#8592;
+            </button>
+
+            <!-- Fixed Height Image Container -->
+            <div
+              class="carousel-container overflow-hidden w-full max-w-2xl h-96 relative flex items-center justify-center"
+            >
+              <img
+                id="ethereaImage1"
+                src="etherea1.png"
+                alt="Etherea Screenshot 1"
+                class="absolute w-auto h-full max-h-full transition-transform duration-500 opacity-100"
+              />
+              <img
+                id="ethereaImage2"
+                src="etherea2.png"
+                alt="Etherea Screenshot 2"
+                class="absolute w-auto h-full max-h-full transition-transform duration-500 opacity-0"
+              />
+              <img
+                id="ethereaImage3"
+                src="etherea3.png"
+                alt="Etherea Screenshot 3"
+                class="absolute w-auto h-full max-h-full transition-transform duration-500 opacity-0"
+              />
+              <img
+                id="ethereaImage4"
+                src="etherea4.png"
+                alt="Etherea Screenshot 4"
+                class="absolute w-auto h-full max-h-full transition-transform duration-500 opacity-0"
+              />
+            </div>
+
+            <!-- Right Arrow -->
+            <button
+              id="nextBtnEtherea"
+              class="absolute right-0 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-600 z-10"
+            >
+              &#8594;
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div>
+          <h3 class="text-3xl font-semibold mb-3">
+            Augmented Reality Travel Guide (In
+            Progress)
+          </h3>
+          <p class="text-xl">
+            An AR-based mobile application using
+            <strong
+              >ARCore, ARKit, Kotlin, and
+              Firebase</strong
+            >
+            to provide interactive travel
+            information and virtual experiences.
+          </p>
+        </div>
+
+        <!-- Project 4 -->
+        <div>
+          <h3 class="text-3xl font-semibold mb-3">
+            AI-Powered Personal Finance Assistant
+            (In Progress)
+          </h3>
+          <p class="text-xl">
+            A finance management platform
+            leveraging
+            <strong>machine learning</strong> to
+            track spending, create budgets, and
+            provide personalized financial
+            insights.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Image Carousel Logic for Project 1
+      const project1Images = [
+        document.getElementById("project1Image1"),
+        document.getElementById("project1Image2"),
+      ];
+      let currentProject1Index = 0;
+
+      // Update image visibility for Project 1
+      const updateProject1Carousel = () => {
+        project1Images.forEach((img, index) => {
+          img.style.opacity =
+            index === currentProject1Index
+              ? "1"
+              : "0";
+          img.style.transform =
+            index === currentProject1Index
+              ? "scale(1)"
+              : "scale(0.95)";
+        });
+      };
+
+      // Handle navigation for Project 1
+      document
+        .getElementById("prevBtnProject1")
+        .addEventListener("click", () => {
+          currentProject1Index =
+            (currentProject1Index -
+              1 +
+              project1Images.length) %
+            project1Images.length;
+          updateProject1Carousel();
+        });
+
+      document
+        .getElementById("nextBtnProject1")
+        .addEventListener("click", () => {
+          currentProject1Index =
+            (currentProject1Index + 1) %
+            project1Images.length;
+          updateProject1Carousel();
+        });
+
+      // Initialize Project 1 carousel
+      updateProject1Carousel();
+    </script>
+    <script>
+      const ethereaImages = [
+        document.getElementById("ethereaImage1"),
+        document.getElementById("ethereaImage2"),
+        document.getElementById("ethereaImage3"),
+        document.getElementById("ethereaImage4"),
+      ];
+      let currentEthereaIndex = 0;
+
+      // Update image visibility
+      const updateEthereaCarousel = () => {
+        ethereaImages.forEach((img, index) => {
+          img.style.opacity =
+            index === currentEthereaIndex
+              ? "1"
+              : "0";
+          img.style.transform =
+            index === currentEthereaIndex
+              ? "scale(1)"
+              : "scale(0.95)";
+        });
+      };
+
+      // Handle navigation
+      document
+        .getElementById("prevBtnEtherea")
+        .addEventListener("click", () => {
+          currentEthereaIndex =
+            (currentEthereaIndex -
+              1 +
+              ethereaImages.length) %
+            ethereaImages.length;
+          updateEthereaCarousel();
+        });
+
+      document
+        .getElementById("nextBtnEtherea")
+        .addEventListener("click", () => {
+          currentEthereaIndex =
+            (currentEthereaIndex + 1) %
+            ethereaImages.length;
+          updateEthereaCarousel();
+        });
+
+      // Initialize carousel
+      updateEthereaCarousel();
+    </script>
 
     <script>
       // Dynamic background color change based on scroll position
@@ -523,8 +760,6 @@
         }
       );
 
-    
-      
       // Intersection Observer for fading in/out sections
       const sections =
         document.querySelectorAll(".section");
