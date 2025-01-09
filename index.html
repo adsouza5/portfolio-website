@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adam Dsouza - Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link href="styles.css" rel="stylesheet">
-  <style>
-    /* Background gradient that changes from black/purple to black/red */
-    body {
-      font-family: 'Roboto', sans-serif;
-      scroll-behavior: smooth;
-      background: linear-gradient(to right, #000000, #4b0082);
-      min-height: 100vh;
-      transition: background 0.5s ease;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Adam Dsouza - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <style>
+      /* Background gradient that changes from black/purple to black/red */
+      body {
+        font-family: "Roboto", sans-serif;
+        scroll-behavior: smooth;
+        background: linear-gradient(
+          to right,
+          #000000,
+          #4b0082
+        );
+        min-height: 100vh;
+        transition: background 0.5s ease;
+      }
 
-    .navbar {
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 10;
-      /* background-color: rgba(0, 0, 0, 0.7); */
-      padding: 20px;
-    }
+      .navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        /* background-color: rgba(0, 0, 0, 0.7); */
+        padding: 20px;
+      }
 
-    .navbar a {
-      margin-left: 20px;
-      color: white;
-      font-size: 20px;
-      transition: color 0.3s;
-    }
+      .navbar a {
+        margin-left: 20px;
+        color: white;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
 
-    .navbar a:hover {
-      color: #df084f;
-    }
+      .navbar a:hover {
+        color: #df084f;
+      }
 
-    /* Section styles with fade-in effect */
-    /* .section {
+      /* Section styles with fade-in effect */
+      /* .section {
       padding: 80px 20px;
       min-height: 100vh;
       opacity: 0;
@@ -47,164 +60,300 @@
       transform: translateY(20px);
       transition: opacity 1s ease, transform 1s ease, visibility 1s;
     } */
-    .section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 20px;
-      min-height: 100vh;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease, visibility 1s;
-  }
-
-  /* Container for the portfolio and LinkedIn images */
-  .image-container {
-    position: relative; /* Allows positioning the LinkedIn image relative to this container */
-    display: inline-flex; /* Ensures both images stay aligned */
-    align-items: center;
-  }
-
-  /* Portfolio image */
-  .portfolio-img {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    z-index: 1; /* Keep this image on top if necessary */
-  }
-  .portfolio-img:hover {
-    transform: scale(1.1); /* Pop-out effect */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  }
-
-  /* LinkedIn image - initially hidden and positioned outside the portfolio image */
-  .linkedin-img {
-    position: absolute;
-    top: 40%; /* Align vertically centered with the portfolio image */
-    left: 110%; /* Position it to the right outside the portfolio image */
-    transform: translateY(-50%) scale(0); /* Initially hidden */
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    width: 50px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .github-img {
-    position: absolute;
-    top: calc(60%); /* Position it below the LinkedIn image */
-    left: 110%; /* Position it to the right outside the portfolio image */
-    transform: translateY(-50%) scale(0); /* Initially hidden */
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    width: 50px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Show LinkedIn image on hover of portfolio image */
-  .image-container:hover .linkedin-img {
-    opacity: 1;
-    transform: translateY(-50%) scale(1); /* Slide into view */
-  }
-
-  .image-container:hover .github-img{
-    opacity: 1;
-    transform: translateY(-50%) scale(1);
-  }
-
-  .section.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  </style>
-</head>
-<body>
-  <!-- Navbar -->
-  <div class="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#resume">Resume</a>
-  </div>
-
-  <!-- Home Section -->
-  <section id="home" class="section visible flex flex-col items-center justify-center text-white">
-    <h1 class="text-9xl font-bold mb-5">Greetings</h1>
-    <p class="text-2xl mb-10">Software Developer</p>
-  
-    <!-- Centered Image with Pop-Out Effect -->
-    <div class="image-container relative">
-
-      <img src="portfolio.jpg" alt="Adam Dsouza" class="portfolio-img rounded-full shadow-lg" width="300" height="300">
-
-      <!-- LinkedIn Image with Link -->
-      <a href="https://www.linkedin.com/in/adam-dsouza/" target="_blank">
-        <img src="linkedIn.png" alt="LinkedIn Profile" class="linkedin-img absolute">
-      </a>
-
-      <!-- GitHub Image with Link -->
-      <a href="https://github.com/adsouza5" target="_blank">
-        <img src="github.png" alt="GitHub" class="github-img absolute">
-      </a>
-    </div>
-  
-    <p class="text-xl mt-10">Computer Science graduate from Arizona State University, passionate about solving real-world problems and driving innovation.</p>
-    <blockquote class="italic mt-6">"Change will not come if we wait for some other person or some other time. We are the ones we've been waiting for. We are the change that we seek."</blockquote>
-    <p class="text-lg text-right mt-3">- Barack Obama</p>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section bg-gray-900 text-white">
-    <h2 class="text-5xl text-center mb-8"><u>About Me</u></h2>
-    <p class="max-w-4xl mx-auto text-xl mb-6">
-      I was born in Hyderabad, India, and I am a Computer Science graduate from Arizona State University. Growing up, I participated in a diverse range of activities and developed a passion for learning and solving problems...
-    </p>
-    <div class="flex flex-wrap justify-center gap-6 mt-10">
-      <img src="cricket.jpg" alt="Cricket" class="shadow-lg rounded-lg" width="400" height="250">
-      <img src="mountain.jpg" alt="Mountain" class="shadow-lg rounded-lg" width="500" height="250">
-      <img src="plane.jpg" alt="Plane" class="shadow-lg rounded-lg" width="400" height="250">
-      <img src="zion.jpg" alt="Zion" class="shadow-lg rounded-lg" width="400" height="250">
-    </div>
-  </section>
-
-  <!-- Resume Section -->
-  <section id="resume" class="section text-center bg-gray-800 text-white">
-    <h2 class="text-5xl mb-8"><u>Resume</u></h2>
-    <div class="flex justify-center">
-      <img src="resume.jpg" alt="Adam Dsouza Resume" class="shadow-lg w-3/4 mx-auto card-hover" id="zoomableImage" />
-    </div>
-  </section>
-
-  <script>
-    // Dynamic background color change based on scroll position
-    window.addEventListener('scroll', function () {
-      const scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-      const red = Math.min(255, Math.floor(75 + 180 * scrollPercentage));
-      const purple = Math.max(0, Math.floor(130 - 130 * scrollPercentage));
-      document.body.style.background = `linear-gradient(to right, #000000, rgb(${purple}, 0, ${red}))`;
-    });
-
-    // Intersection Observer for fading in/out sections
-    const sections = document.querySelectorAll('.section');
-    const observerOptions = {
-    root: null,
-    threshold: 0.2 // Adjust threshold to make sections appear sooner
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
+      .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px;
+        min-height: 100vh;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: opacity 1s ease,
+          transform 1s ease, visibility 1s;
       }
-    });
-  }, observerOptions);
 
-  sections.forEach(section => observer.observe(section));
-  </script>
-</body>
+      /* Container for the portfolio and LinkedIn images */
+      .image-container {
+        position: relative; /* Allows positioning the LinkedIn image relative to this container */
+        display: inline-flex; /* Ensures both images stay aligned */
+        align-items: center;
+      }
+
+      /* Portfolio image */
+      .portfolio-img {
+        transition: transform 0.4s ease,
+          box-shadow 0.4s ease;
+        z-index: 1; /* Keep this image on top if necessary */
+      }
+      .portfolio-img:hover {
+        transform: scale(
+          1.1
+        ); /* Pop-out effect */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      /* LinkedIn image - initially hidden and positioned outside the portfolio image */
+      .linkedin-img {
+        position: absolute;
+        top: 40%; /* Align vertically centered with the portfolio image */
+        left: 110%; /* Position it to the right outside the portfolio image */
+        transform: translateY(-50%) scale(0); /* Initially hidden */
+        opacity: 0;
+        transition: transform 0.5s ease,
+          opacity 0.5s ease;
+        width: 50px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .github-img {
+        position: absolute;
+        top: calc(
+          60%
+        ); /* Position it below the LinkedIn image */
+        left: 110%; /* Position it to the right outside the portfolio image */
+        transform: translateY(-50%) scale(0); /* Initially hidden */
+        opacity: 0;
+        transition: transform 0.5s ease,
+          opacity 0.5s ease;
+        width: 50px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Show LinkedIn image on hover of portfolio image */
+      .image-container:hover .linkedin-img {
+        opacity: 1;
+        transform: translateY(-50%) scale(1); /* Slide into view */
+      }
+
+      .image-container:hover .github-img {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+      }
+
+      .section.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#resume">Resume</a>
+    </div>
+
+    <!-- Home Section -->
+    <section
+      id="home"
+      class="section visible flex flex-col items-center justify-center text-white"
+    >
+      <h1 class="text-9xl font-bold mb-5">
+        Greetings
+      </h1>
+      <p class="text-2xl mb-10">
+        Software Developer
+      </p>
+
+      <!-- Centered Image with Pop-Out Effect -->
+      <div class="image-container relative">
+        <img
+          src="portfolio.jpg"
+          alt="Adam Dsouza"
+          class="portfolio-img rounded-full shadow-lg"
+          width="300"
+          height="300"
+        />
+
+        <!-- LinkedIn Image with Link -->
+        <a
+          href="https://www.linkedin.com/in/adam-dsouza/"
+          target="_blank"
+        >
+          <img
+            src="linkedIn.png"
+            alt="LinkedIn Profile"
+            class="linkedin-img absolute"
+          />
+        </a>
+
+        <!-- GitHub Image with Link -->
+        <a
+          href="https://github.com/adsouza5"
+          target="_blank"
+        >
+          <img
+            src="github.png"
+            alt="GitHub"
+            class="github-img absolute"
+          />
+        </a>
+      </div>
+
+      <p class="text-xl mt-10">
+        Computer Science graduate from Arizona
+        State University, passionate about solving
+        real-world problems and driving
+        innovation.
+      </p>
+      <blockquote class="italic mt-6">
+        "Change will not come if we wait for some
+        other person or some other time. We are
+        the ones we've been waiting for. We are
+        the change that we seek."
+      </blockquote>
+      <p class="text-lg text-right mt-3">
+        - Barack Obama
+      </p>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="section bg-gray-900 text-white"
+    >
+      <h2 class="text-5xl text-center mb-8">
+        <u>About Me</u>
+      </h2>
+      <p class="max-w-4xl mx-auto text-xl mb-6">
+        I’ve always been a curious and social
+        person who loves meeting people from
+        different backgrounds and learning about
+        their perspectives. This curiosity about
+        the world, combined with a desire to
+        challenge myself, led me to study
+        overseas. That experience not only
+        broadened my worldview but also helped me
+        grow personally and professionally. My
+        interest in problem-solving naturally drew
+        me to Computer Science. I’ve always
+        enjoyed figuring out how things work and
+        finding creative ways to make them better.
+        Along the way, I discovered that
+        development is as much about collaboration
+        as it is about coding. Working with others
+        has taught me how to listen, adapt, and
+        step up when faced with challenges. As a
+        developer, I’m driven by the opportunity
+        to explore new ideas and technologies
+        while working on projects that make a
+        tangible impact. I see every new challenge
+        as a chance to learn and grow, and I look
+        forward to building meaningful solutions
+        alongside others who share the same
+        passion for creating something great.
+      </p>
+      <div
+        class="flex flex-wrap justify-center gap-6 mt-10"
+      >
+        <img
+          src="cricket.jpg"
+          alt="Cricket"
+          class="shadow-lg rounded-lg"
+          width="400"
+          height="250"
+        />
+        <img
+          src="mountain.jpg"
+          alt="Mountain"
+          class="shadow-lg rounded-lg"
+          width="500"
+          height="250"
+        />
+        <img
+          src="plane.jpg"
+          alt="Plane"
+          class="shadow-lg rounded-lg"
+          width="400"
+          height="250"
+        />
+        <img
+          src="zion.jpg"
+          alt="Zion"
+          class="shadow-lg rounded-lg"
+          width="400"
+          height="250"
+        />
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section
+      id="resume"
+      class="section text-center bg-gray-800 text-white"
+    >
+      <h2 class="text-5xl mb-8"><u>Resume</u></h2>
+      <div class="flex justify-center">
+        <img
+          src="resume.jpg"
+          alt="Adam Dsouza Resume"
+          class="shadow-lg w-3/4 mx-auto card-hover"
+          id="zoomableImage"
+        />
+      </div>
+    </section>
+
+    <script>
+      // Dynamic background color change based on scroll position
+      window.addEventListener(
+        "scroll",
+        function () {
+          const scrollPercentage =
+            window.scrollY /
+            (document.body.scrollHeight -
+              window.innerHeight);
+          const red = Math.min(
+            255,
+            Math.floor(
+              75 + 180 * scrollPercentage
+            )
+          );
+          const purple = Math.max(
+            0,
+            Math.floor(
+              130 - 130 * scrollPercentage
+            )
+          );
+          document.body.style.background = `linear-gradient(to right, #000000, rgb(${purple}, 0, ${red}))`;
+        }
+      );
+
+      // Intersection Observer for fading in/out sections
+      const sections =
+        document.querySelectorAll(".section");
+      const observerOptions = {
+        root: null,
+        threshold: 0.2, // Adjust threshold to make sections appear sooner
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(
+                "visible"
+              );
+            } else {
+              entry.target.classList.remove(
+                "visible"
+              );
+            }
+          });
+        },
+        observerOptions
+      );
+
+      sections.forEach((section) =>
+        observer.observe(section)
+      );
+    </script>
+  </body>
 </html>
